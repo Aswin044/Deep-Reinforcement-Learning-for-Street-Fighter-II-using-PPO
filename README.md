@@ -1,69 +1,22 @@
-🔥 Overview
+📌 Overview
 
 This project implements a Deep Reinforcement Learning (DRL) agent using Proximal Policy Optimization (PPO) to play Street Fighter II: Special Champion Edition.
-It includes a custom Gym Retro environment, optimized preprocessing pipeline, reward shaping, hyperparameter tuning using Optuna, and a fully modular interpretability framework to understand the agent’s behavior.
+It features a custom Gym Retro environment, preprocessing pipeline, reward shaping, hyperparameter optimization, and an interpretability framework designed to make the RL agent transparent and explainable.
 
-This work is based on the research paper included in this repository.
+🎮 Features
 
-🎮 Key Features
+Custom Gym Retro environment
 
-Custom Gym Retro Environment for Street Fighter II
+84×84 grayscale preprocessing
 
-Frame Preprocessing Pipeline
+4-frame stacking for temporal awareness
 
-Grayscale conversion
+PPO training with GAE
 
-Downsampling to 84×84
+Score-differential reward shaping
 
-Frame stacking (4-frame state)
+Hyperparameter tuning using Optuna
 
-Reward Shaping based on score differences
+Interpretability tools (action histograms, loss curves, reward plots)
 
-Stable PPO Training with GAE and clipped objective
-
-Hyperparameter Optimization using Optuna
-
-Glass-Box Interpretability Tools:
-
-Action usage histograms
-
-Reward distribution
-
-Reward progression plots
-
-Policy / value loss curves
-
-Emergent RL Behaviors: spacing, zoning, jump-attacks, punish patterns
-
-🧠 Technical Summary
-Observation Pipeline
-
-Converts raw game frames to grayscale
-
-Normalizes and resizes to 84×84
-
-Stacks 4 frames to form temporal context
-
-Action Space
-
-Multi-binary vector representing 12 possible controller actions
-
-Supports simultaneous button presses (jump + punch, etc.)
-
-Reward Shaping
-reward(t) = score(t) − score(t−1)
-
-
-Fallback rewards for hits, damage, and round wins.
-
-PPO Training
-
-Clipped surrogate objective
-
-GAE advantage estimation
-
-Adam optimizer
-
-Gradient clipping
-
-Entropy regularization
+Emergent strategies (spacing, zoning, jump-attacks, punishments)
